@@ -1,0 +1,14 @@
+footer{
+    height: auto;
+    background: #673ab7;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+footer > div > img{
+    margin:40px 25px 20px 25px;
+
+}
+app-formulario{
+    clear: both;
+}

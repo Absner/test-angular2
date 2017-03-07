@@ -1,0 +1,21 @@
+<div class="padding-all palette-1">
+    <h1 class=" text-color-1 center">Nuestra trayectoria por el mundo</h1>
+    <div class="padding-all pading">
+        <chart [options]="options"></chart>
+    </div>
+
+    <div class="center">
+        <md-select placeholder="Paises por continente" [(ngModel)]='cont'>
+            <md-option></md-option>
+            <md-option *ngFor='let continente of continentes' value='{{continente.nombre}}' >{{continente.nombre}}</md-option>
+        </md-select>
+        <ul>
+            <li *ngFor='let pais of paises | search:cont'>
+                <img src="{{pais.foto}}">
+                <span>{{pais.nombre}}</span> 
+            </li>
+        </ul>
+    </div>
+</div>
+
+

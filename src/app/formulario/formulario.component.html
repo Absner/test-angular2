@@ -1,0 +1,41 @@
+<button md-button (click)="lgModal.show()">Contacto</button>
+ 
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title pull-left text-color-1">Contacto con nuestros asesores</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="lgModal.hide()">
+        <div class="container">
+
+          <md-input-container>
+            <input mdInput type="text" name="nombre" placeholder="Nombre" [(ngModel)]="nombre" required>
+          </md-input-container>
+          <md-input-container>
+            <input mdInput type="text" name="apellido" placeholder="Apellido" [(ngModel)]="apellido" required>
+          </md-input-container>
+          
+            
+            <div>
+              <pre class="card card-block card-header">Dia de la cita: <em *ngIf="dt">{{ getDate() | date:'fullDate'}}</em></pre>
+              <h4>Seleccione la fecha de cita</h4>
+              <div style="display:inline-block; min-height:290px;">
+                <datepicker name="fecha" [(ngModel)]="dt" [minDate]="minDate" [showWeeks]="true" [dateDisabled]="dateDisabled"></datepicker>
+              </div>
+              <hr/>
+            </div>
+            
+          <button type="submit"  (click)="fecha()" aria-label="Close">Guardar</button>
+          <button  (click)="lgModal.hide()" aria-label="Close">Cerrar</button>
+          
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

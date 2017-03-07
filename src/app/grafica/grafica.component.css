@@ -1,0 +1,13 @@
+ul > li {
+    display: inline;
+    margin: 20px;
+
+}
+ul>li>img{
+    border-radius: 70%;
+    margin: 20px;
+}
+.pading{
+    margin-left: 27%;
+}
+
